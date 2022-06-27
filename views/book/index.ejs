@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+
+    <body>
+        <%- include('../partials/nav.ejs') %>
+            <div class="content">
+                
+                
+                <div style="display: flex; justify-content: space-between;">
+                    <h2>List of books</h2>
+                    <a class="tp" href="/books/new">
+                        <img src="add.png" alt="">
+                        <span class="tooltiptext">Add book</span>
+                    </a>
+                </div>
+                
+                <div class="list-book">
+                    <% books.forEach(book=> { %>
+                        <div class="book">
+                            <div class="in-book">
+                                <a href="/books/<%= book._id%>">
+                                    <div><span class="property">Title:</span>
+                                        <%= book.title.slice(0,70) %>
+                                    </div>
+                                    <div><span class="property">Autor:</span>
+                                        <%= book.author%>
+                                    </div>
+                                    <div><span class="property">Publisher:</span>
+                                        <%= book.publisher%>
+                                    </div>
+                                    <div><span class="property">Publication Place:</span>
+                                        <%= book.publication_place%>
+                                    </div>
+                                    <div><span class="property">Publication Date:</span>
+                                        <%= book.publication_date%>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <% }) %>
+
+                </div>
+
+            </div>
+            <%- include('../partials/footer.ejs')%>
+    </body>
+
+</html>

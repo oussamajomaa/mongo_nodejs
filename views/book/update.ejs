@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+
+    <body>
+
+        <%- include('../partials/nav.ejs') %>
+
+            <div class="content">
+                <div style="display: flex; justify-content: space-between;">
+                    <h1>Detail's book</h1>
+                </div>
+                <div class="list-book">
+                    <form action="/save-update/<%= book._id%>" method="post">
+                        <div class="book-details">
+                            <div><span class="property">Title:</span>
+                                <input type="text" name="title" value="<%= book.title %>">
+                                
+                            </div>
+                            <div><span class="property">Author:</span>
+                                <input type="text" name="author" value="<%= book.author%>">
+                                
+                            </div>
+                            <div><span class="property">Publication Place:</span>
+                                <input type="text" name="publication_place" value="<%= book.publication_place%>">
+                                
+                            </div>
+                            <div><span class="property">Publication Date:</span>
+                                <%= book.publication_date%>
+                            </div>
+                            <!-- <div class="action">
+                                <a class="tp" href="/save-update/<%= book._id%>"><img src="/update.png" alt="">
+                                    <span class="tooltiptext">Save book</span>
+                                </a>
+                            </div> -->
+                            <button>Save</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <%- include('../partials/footer.ejs')%>
+    </body>
+
+</html>

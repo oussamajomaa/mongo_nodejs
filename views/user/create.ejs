@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+
+    <body>
+        <%- include('../partials/nav.ejs')%>
+            <div class="content">
+                <h1><center><CONACT page>Add user<c/enter></CONACT></h1>
+               <form action="/signup" method="POST" class="add">
+                   <input type="text" name="email" placeholder="email">
+                   <input type="password" name="password" placeholder="password">
+                   <button>Submit</button>
+               </form>
+            </div>
+            <%- include('../partials/footer.ejs')%>
+    </body>
+
+</html>

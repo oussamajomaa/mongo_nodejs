@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Noto Serif', sans-serif;
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+}
+a:hover{
+    color: #222;
+}
+
+nav a:hover{
+    color: red;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+form.add {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+form input,
+form textarea {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+form button {
+    padding: 10px;
+}
+
+.active {
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.content {
+    width: 90%;
+    margin: auto;
+}
+
+.list-book {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.in-book {
+    width: 98%;
+    border-left: 4px solid red;
+    padding: 5px;
+    margin-bottom: 15px;
+
+}
+
+.book-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    border-left: red solid 3px;
+    box-sizing: border-box;
+    padding: 3px;
+    margin: 15px 3px;
+
+}
+
+.book-details div {
+    margin-bottom: 15px;
+}
+
+.book-details label {
+    display: block;
+    
+}
+
+.book-details input {
+    width: 90%;
+}
+
+
+
+
+.property {
+    font-weight: 900;
+}
+
+.property span {
+    text-align: justify !important;
+}
+
+.action {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+
+/* TOOTLTIP */
+
+.tp {
+    position: relative;
+    display: inline-block;
+}
+
+.tp .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    /* padding: 5px 0; */
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tp .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tp:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* END TOOTLTIP */
+
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 1200px) {
+    .book {
+        width: 49%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .book {
+        width: 100%;
+    }
+}

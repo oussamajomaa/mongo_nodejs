@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+
+    <body>
+        <%- include('../partials/nav.ejs')%>
+            <div class="content">
+                <h2><center><CONACT page>Lists of users<c/enter></CONACT></h2>
+               <div>
+                   <% users.forEach(user => { %>
+                    <h2><%= user.email %></h2>
+                    <% }) %>
+               </div>
+            </div>
+            <%- include('../partials/footer.ejs')%>
+    </body>
+
+</html>

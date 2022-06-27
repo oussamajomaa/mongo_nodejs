@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+
+    <body>
+
+        <%- include('../partials/nav.ejs') %>
+
+            <div class="content">
+                <div style="display: flex; justify-content: space-between;">
+                    <h1>Detail's book</h1>
+                </div>
+                <form action="/books/update/<%= book._id%>" method="post">
+                    <div class="list-book">
+                        <div class="book-details">
+                            <div><label class="property">Title:</label>
+                                <input type="text" name="title" value="<%= book.title %>">
+                            </div>
+                            <div><label class="property">Autor:</label>
+                                <input type="text" name="author" value="<%= book.author %>">
+                            </div>
+                            <div><label class="property">Publisher:</label>
+                                <input type="text" name="publisher" value="<%= book.publisher %>">
+                            </div>
+                            <div><label class="property">Publication Place:</label>
+                                <input type="text" name="publication_place" value="<%= book.publication_place %>">
+                            </div>
+                            <div><label class="property">Publication Date:</label>
+                                <input type="text" name="publication_date" value="<%= book.publication_date %>">
+                            </div>
+                            <div class="action">
+                                <a class="tp delete" href="/books/delete/<%= book._id%>"><img src="/delete.png" alt="">
+                                    <span class="tooltiptext">Delete book</span>
+                                </a>
+                                <button class="tp" style="border:none; background:transparent; padding: 0; cursor: pointer;"><img src="/update.png" alt="">
+                                    <span class="tooltiptext">Update book</span>
+                                </button>
+                            </div>
+
+                            <!-- <script>
+                            const trash = document.querySelector('a.delete')
+                            trash.addEventListener('click', () => {
+                                const url = "/delete-book/<%= book._id%>"
+                                fetch(url, {
+                                    method: 'DELETE'
+                                })
+                                    .then((response) => response.json())
+                                    .then(data => window.location.href = '/')
+                                    .catch(err => console.log(err))
+                            })
+                        </script> -->
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <%- include('../partials/footer.ejs')%>
+    </body>
+
+</html>
